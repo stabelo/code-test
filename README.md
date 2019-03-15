@@ -4,10 +4,10 @@ This is the code skeleton for the stabelo code test. It provides initial setup f
 
 ## Running
 Both the frontend and the backend has the following npm scripts
-* Clean
+* `npm run clean`
     * Used to clean the workspace
-* Build
+* `npm run build`
     * Builds the source files
-* Develop
+* `npm run develop`
     * Runs the application locally
 
