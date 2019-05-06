@@ -3,7 +3,7 @@ import * as React from "react";
 class ImplementationPage extends React.Component {
     public render() {
         return (
-            <div>Lägg implementationen här</div>
+            <h2>Lägg implementationen här</h2>
         );
     }
 }
