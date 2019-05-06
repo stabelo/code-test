@@ -2,6 +2,8 @@ import * as React from "react";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 import { Location } from 'history';
 
+import * as css from "./Header.module.scss";
+
 interface IProperties {
     location: Location;
 }
@@ -14,7 +16,7 @@ class Header extends React.Component<IProperties> {
         } = this.props;
 
         return (
-            <header>
+            <header className="header">
                 <nav>
                     <ul>
 
