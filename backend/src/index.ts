@@ -14,11 +14,12 @@ router.get("/sample", (context) => {
     }); 
 });
 
-app.use(router.routes());
 app.use(bodyparser({
     enableTypes: ["json"]
 }))
 app.use(cors());
+
+app.use(router.routes());
 
 app.listen(3000);
 
