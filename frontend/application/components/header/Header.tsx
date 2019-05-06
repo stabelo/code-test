@@ -1,32 +1,17 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
+import { Location } from 'history';
 
 interface IProperties {
-    activeLink?: string;
+    location: Location;
 }
 
-interface IState {
-    activeLink: string;
-}
-
-class Header extends React.Component<IProperties, IState> {
-    constructor(props: IProperties) {
-        super(props);
-        this.state = {
-            activeLink: props.activeLink !== undefined ? props.activeLink : "about",
-        }
-    }
-
-    private toggleActive(activeLink: string) {
-        this.setState({
-            activeLink,
-        });
-    }
+class Header extends React.Component<IProperties> {
 
     public render() {
         const {
-            activeLink
-        } = this.state;
+            location
+        } = this.props;
 
         return (
             <header>
@@ -36,10 +21,10 @@ class Header extends React.Component<IProperties, IState> {
                         <a href="https://stabelo.se" ><img src="https://s3.eu-central-1.amazonaws.com/static.stabelo.net.eu-central-1/Stabelo_logo_RGB.png"  alt="Stabelo" /></a>
 
                         <li>
-                            <Link className={activeLink === "about" ? "active" : ""} onClick={() => this.toggleActive("about")} to="/about">Om uppgiften</Link>
+                            <Link className={location.pathname === "/about" ? "active" : ""} to="/about">Om uppgiften</Link>
                         </li>
                         <li>
-                            <Link className={activeLink === "implementation" ? "active" : ""} onClick={() => this.toggleActive("implementation")} to="/implementation">Implementation</Link>
+                            <Link className={location.pathname === "/implementation" ? "active" : ""} to="/implementation">Implementation</Link>
                         </li>
                     </ul>
                 </nav>
@@ -48,4 +33,4 @@ class Header extends React.Component<IProperties, IState> {
     }
 }
 
-export default Header;
+export default withRouter((props: RouteComponentProps) => <Header {...props} />);
