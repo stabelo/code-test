@@ -1,6 +1,6 @@
+import { Location } from "history";
 import * as React from "react";
-import { Link, withRouter, RouteComponentProps } from "react-router-dom";
-import { Location } from 'history';
+import { Link, RouteComponentProps, withRouter } from "react-router-dom";
 
 import * as css from "./Header.module.scss";
 
@@ -12,7 +12,7 @@ class Header extends React.Component<IProperties> {
 
     public render() {
         const {
-            location
+            location,
         } = this.props;
 
         const classes = [css.header];
