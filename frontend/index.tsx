@@ -1,9 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
+
 import Header from "./application/components/header/Header";
 import About from "./application/pages/about/AboutPage";
-import Implementation from "./application/pages/data/ImplementationPage";
+import Implementation from "./application/pages/implementation/ImplementationPage";
+
 import "./index.scss";
 
 ReactDOM.render(

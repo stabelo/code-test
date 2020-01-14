@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "clean": "rm -rf target",
     "build": "tsc -p tsconfig.json",
     "watch": "tsc --watch -p tsconfig.json",

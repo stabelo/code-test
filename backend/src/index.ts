@@ -6,12 +6,15 @@ import * as Router from "koa-router";
 const app = new Koa();
 const router = new Router();
 
+// This is just an example route
 router.get("/sample", (context) => {
     Object.assign(context.response, {
         body: {message: "Hello world"},
         status: 200,
     });
 });
+
+// Add additional routes for implementation here...
 
 app.use(bodyparser({
     enableTypes: ["json"],
