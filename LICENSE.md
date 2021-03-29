@@ -1,1 +1,1 @@
-© 2019 Stabelo Group AB
+© 2021 Stabelo Group AB
