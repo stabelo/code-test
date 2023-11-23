@@ -1,23 +1,33 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
+// eslint-disable-next-line import/no-unassigned-import
+import './index.scss';
+import { Header } from './src/components/header/Header';
+import { AboutPage } from './src/pages/about/AboutPage';
+import { ImplementationPage } from './src/pages/implementation/ImplementationPage';
+import * as React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import Header from "./application/components/header/Header";
-import About from "./application/pages/about/AboutPage";
-import Implementation from "./application/pages/implementation/ImplementationPage";
-
-import "./index.scss";
-
-ReactDOM.render(
-    <BrowserRouter>
-        <>
-            <Header />
-            <main>
-                <Route exact={true} path="/" render={() => <Redirect to="/about" />} />
-                <Route path="/about" component={About} />
-                <Route path="/implementation" component={Implementation} />
-            </main>
-        </>
-    </BrowserRouter>,
-    document.getElementById("app"),
+createRoot(document.querySelector('#app')).render(
+  <BrowserRouter>
+    <>
+      <Header />
+      <main>
+        <Routes>
+          <Route
+            element={<Navigate to="/about" />}
+            exact
+            path="/"
+          />
+          <Route
+            element={<AboutPage />}
+            path="/about"
+          />
+          <Route
+            element={<ImplementationPage />}
+            path="/implementation"
+          />
+        </Routes>
+      </main>
+    </>
+  </BrowserRouter>,
 );
