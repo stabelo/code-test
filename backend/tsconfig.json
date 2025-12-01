@@ -1,21 +1,25 @@
 {
-    "compilerOptions": {
-        "lib": ["es5", "es6"],
-        "target": "es6",
-        "module": "commonjs",
-        "rootDir": "src",
-        "outDir": "target",
-        "declaration": true,
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "sourceMap": true
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "src/**/*.test.ts",
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "allowUnreachableCode": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importsNotUsedAsValues": "remove",
+    "incremental": true,
+    "module": "nodenext",
+    "outDir": "target",
+    "removeComments": false,
+    "sourceMap": true,
+    "useDefineForClassFields": false
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/node22/tsconfig.json"
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }

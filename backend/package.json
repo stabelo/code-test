@@ -1,39 +1,37 @@
 {
-  "name": "code-test",
-  "version": "0.0.1",
+  "author": "Stabelo Tech <tech@stabelo.se>",
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "boom": "^7.2.1",
+    "config": "^4.1.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
   "description": "Stabelo code test backend",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/boom": "^7.3.0",
+    "@types/express": "^5.0.5",
+    "eslint": "^9.39.1",
+    "eslint-config-canonical": "^47.3.6",
+    "node-dev": "^8.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "target/index.js",
+  "name": "code-test",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "lint": "eslint src/**/*.ts",
-    "clean": "rm -rf target",
     "build": "tsc -p tsconfig.json",
-    "watch": "tsc --watch -p tsconfig.json",
+    "clean": "rm -rf target",
+    "develop": "npm run watch & env NODE_CONFIG_ENV= node-dev target/index.js && fg",
+    "lint": "eslint src/**/*.ts",
     "start": "node target/index.js",
-    "develop": "npm run watch & env NODE_CONFIG_ENV= node-dev target/index.js && fg"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "watch": "tsc --watch -p tsconfig.json"
   },
-  "author": "Stabelo tech",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "devDependencies": {
-    "@types/boom": "^7.3.0",
-    "@types/config": "^3.3.3",
-    "@types/kcors": "^2.2.3",
-    "@types/koa": "^2.11.3",
-    "@types/koa-bodyparser": "^4.3.0",
-    "@types/koa-router": "^7.4.1",
-    "eslint": "^8.54.0",
-    "eslint-config-canonical": "^42.8.0",
-    "node-dev": "^8.0.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
-  },
-  "dependencies": {
-    "boom": "^7.2.1",
-    "config": "^3.3.1",
-    "kcors": "^2.2.2",
-    "koa": "^2.12.1",
-    "koa-bodyparser": "^4.3.0",
-    "koa-router": "^12.0.1"
-  }
+  "type": "module",
+  "version": "0.0.1"
 }

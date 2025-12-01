@@ -1,26 +1,23 @@
-import * as cors from 'kcors';
-import * as Koa from 'koa';
-import * as bodyparser from 'koa-bodyparser';
-import * as Router from 'koa-router';
+import cors from 'cors';
+import express from 'express';
 
-const app = new Koa();
-const router = new Router();
+const PORT = process.env['PORT'] ?? 3_000;
+
+const app = express();
+
+app.use(express.json());
+app.use(cors());
 
 // This is just an example route
-router.get('/sample', (context) => {
-  context.response.body = { message: 'Hello world' };
-  context.response.status = 200;
+app.get('/sample', (request, response) => {
+  response
+    .status(200)
+    .json({ message: 'Hello world: ' + JSON.stringify(request.query) });
 });
 
 // Add additional routes for implementation here...
 
-app.use(
-  bodyparser({
-    enableTypes: ['json'],
-  }),
-);
-app.use(cors());
-
-app.use(router.routes());
-
-app.listen(3_000);
+app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`Server is running on port ${PORT}.`);
+});

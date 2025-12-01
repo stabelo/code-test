@@ -1,22 +1,38 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "target": "es5",
-      "lib": ["es6", "dom"],
-      "sourceMap": true,
-      "allowJs": true,
-      "jsx": "react",
-      "moduleResolution": "node",
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noImplicitAny": true,
-      "strictNullChecks": true
-    },
-    "exclude": [
-      "node_modules",
+  "compilerOptions": {
+    "allowUnreachableCode": true,
+    "customConditions": [
+      "browser"
     ],
-    "files": [
-        ".ambient.d.ts",
-        "index.tsx"
-    ]
-  }
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importsNotUsedAsValues": "remove",
+    "jsx": "react-jsx",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "target",
+    "removeComments": false,
+    "sourceMap": true,
+    "types": [
+      "vite/client"
+    ],
+    "useDefineForClassFields": false
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/node22/tsconfig.json"
+  ],
+  "files": [
+    ".ambient.d.ts",
+    "index.tsx"
+  ]
+}

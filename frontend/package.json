@@ -1,45 +1,35 @@
 {
-  "name": "code-test-front-end",
-  "version": "0.0.1",
+  "author": "Stabelo Tech <tech@stabelo.se>",
+  "dependencies": {
+    "query-string": "^9.3.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6"
+  },
   "description": "Stabelo code test front end application",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^22.19.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-config-canonical": "^47.3.6",
+    "sass-embedded": "^1.93.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "name": "code-test-front-end",
   "private": true,
   "scripts": {
-    "clean": "rm -rf .cache .serve target",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "lint": "eslint index.tsx src/**/*.tsx",
-    "build": "parcel build --log-level info --dist-dir target --cache-dir .cache index.html",
-    "develop": "parcel serve --dist-dir .serve --cache-dir .cache --port 8080 --hmr-port 43569 index.html"
+    "build": "vite build",
+    "clean": "rm -rf target .eslintcache node_modules/.cache node_modules/.vite node_modules/.vite-temp",
+    "develop": "vite",
+    "lint": "tsc --noEmit && eslint \"{demo,src}/**/*.{ts,tsx}\" --cache --cache-strategy content",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
-  "author": "Stabelo tech <tech@stabelo.se>",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "devDependencies": {
-    "@babel/helper-compilation-targets": "^7.10.2",
-    "@parcel/transformer-sass": "^2.10.3",
-    "@types/history": "^5.0.0",
-    "@types/node": "^20.9.4",
-    "@types/qs": "^6.9.3",
-    "@types/react": "^18.2.38",
-    "@types/react-dom": "^18.2.17",
-    "@types/react-router-dom": "^5.1.5",
-    "eslint-config-canonical": "^42.8.0",
-    "parcel": "^2.10.3",
-    "postcss": "^8.4.31",
-    "postcss-modules": "^4.3.0",
-    "process": "^0.11.10",
-    "sass": "^1.26.8",
-    "typescript": "^5.3.2"
-  },
-  "dependencies": {
-    "@mdi/font": "^7.3.67",
-    "history": "^5.0.0",
-    "qs": "^6.9.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.0",
-    "tslib": "^2.0.0"
-  },
-  "browserslist": {
-    "test": "last 2 Firefox versions, last 2 Chrome versions, last 2 Edge versions, last 2 Safari versions",
-    "production": "last 2 Firefox versions, last 2 Chrome versions, last 2 Edge versions, last 2 Safari versions"
-  }
+  "type": "module",
+  "version": "0.0.1"
 }

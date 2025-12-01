@@ -1,13 +1,16 @@
-# Stabelo code test
-## Description
-This is the code skeleton for the stabelo code test. It provides initial setup for frontend and backend in the intrest of saving time. It consists of two projects. Frontend and backend. Frontend has a simple react ui set up and the backend has a simple rest controller sample.
+# Stabelo Code Test
 
-## Running
-Both the frontend and the backend has the following npm scripts
+## Description
+This repository provides the foundational code structure for the Stabelo code test. It includes initial setup for both frontend and backend projects to streamline development. The frontend features a React-based user interface, while the backend includes a sample REST API controller.
+
+## Running the Application
+Both the frontend and backend projects support the following npm scripts:
+
 * `npm run clean`
-    * Used to clean the workspace
+    * Cleans the workspace and removes build artifacts
 * `npm run build`
-    * Builds the source files
+    * Compiles the source files
 * `npm run develop`
-    * Runs the application locally
+    * Runs the application in development mode
+    * **Note:** For the frontend, you may need to append `-- --host` (e.g., `npm run develop -- --host 127.0.0.1`) depending on your development environment
 

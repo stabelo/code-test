@@ -1,9 +1,8 @@
 import * as css from './Header.module.scss';
-import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Header = () => {
-  const classes = [css.header];
+  const classes = [css['header']];
 
   const location = useLocation();
 
@@ -14,13 +13,13 @@ export const Header = () => {
           <a href="https://stabelo.se">
             <img
               alt="Stabelo"
-              src="https://s3.eu-central-1.amazonaws.com/static.stabelo.net.eu-central-1/Stabelo_logo_RGB.png"
+              src="https://s3.eu-central-1.amazonaws.com/static.stabelo.net.eu-central-1/logo/stabelo-logo-2024-black.svg"
             />
           </a>
 
           <li>
             <Link
-              className={location.pathname === '/about' ? css.active : ''}
+              className={location.pathname === '/about' ? css['active'] : ''}
               to="/about"
             >
               Om uppgiften
@@ -29,7 +28,7 @@ export const Header = () => {
           <li>
             <Link
               className={
-                location.pathname === '/implementation' ? css.active : ''
+                location.pathname === '/implementation' ? css['active'] : ''
               }
               to="/implementation"
             >

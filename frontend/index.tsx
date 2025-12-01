@@ -3,11 +3,16 @@ import './index.scss';
 import { Header } from './src/components/header/Header';
 import { AboutPage } from './src/pages/about/AboutPage';
 import { ImplementationPage } from './src/pages/implementation/ImplementationPage';
-import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-createRoot(document.querySelector('#app')).render(
+const root = document.querySelector('#app');
+
+if (!root) {
+  throw new Error('Could not find app root element.');
+}
+
+createRoot(root).render(
   <BrowserRouter>
     <>
       <Header />
@@ -15,7 +20,6 @@ createRoot(document.querySelector('#app')).render(
         <Routes>
           <Route
             element={<Navigate to="/about" />}
-            exact
             path="/"
           />
           <Route
